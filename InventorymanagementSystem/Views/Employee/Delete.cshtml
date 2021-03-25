@@ -1,0 +1,18 @@
+@model Person
+
+@{
+  var fn = Model.BrandName;
+  ViewData["Title"] = fn;
+}
+<h2>Are you sure to delete following item</h2>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">Id: @Model.Id</li>
+  <li class="list-group-item">Brand Name: @Model.BrandName</li>
+  <li class="list-group-item">Price :  @Model.Price</li>
+  <li class="list-group-item">Feature   :  @Model.Feature</li>
+  
+</ul>
+<form asp-asp-controller="Employee" asp-action="Delete" method="POST">
+  <input type="hidden" asp-for="Id"/>
+  <button type="submit" class="btn btn-danger">Delete </button>
+</form>

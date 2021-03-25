@@ -1,0 +1,32 @@
+@model Person
+
+@{
+  ViewData["Title"] = "All Items";
+ 
+}
+<h4>Update Items...</h4>
+<hr />
+<form asp-controller="Employee" asp-action="Edit" method="POST">
+  <input type="hidden" asp-for="Id"/>
+  <div class="form-group">
+    <label asp-for="BrandName"></label>
+    <span class="text-danger" asp-validation-for="BrandName"></span>
+    <input type="text" class="form-control" asp-for="BrandName" placeholder="Enter Your Enter Your BrandName">
+  </div>
+<div class="form-group">
+    <label asp-for="Price"></label>
+    <input type="number" class="form-control" asp-for="Price" placeholder="Enter  Price">
+  </div>
+  <div class="form-group">
+    <label asp-for="Feature"></label>
+    <span class="text-danger" asp-validation-for="Feature"></span>
+    <input type="text" class="form-control" asp-for="Feature" placeholder="Enter Your Enter Your BrandName">
+  </div>
+
+  <div class="form-group">
+    <label asp-for="Feature"></label>
+    <input type="number" class="form-control" asp-for="Feature" placeholder="Enter Items Feature">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update Item </button>
+</form>

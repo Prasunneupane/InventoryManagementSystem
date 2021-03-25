@@ -1,0 +1,38 @@
+
+
+<h1>All Items......</h1>
+@{
+  ViewData["Title"] = "Add Employee";
+}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">BrandName</th>
+      <th scope="col">Price</th>
+      <th scope="col">Feature</th>
+      
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+      @{int i = 1;}
+   @foreach (var employee in Model)
+   {
+       <tr scope = "row">
+          <td>@(i++)</td>
+           <td>
+            <a href="/employee/detail?id=@employee.Id">@employee.BrandName </a>
+            </td>
+          
+           <td> @employee.Price</td>
+           <td> @employee.Feature</td>
+           
+           <td><a class="btn btn-warning"href="/Employee/Edit?id=@employee.Id">Edit</a></td>
+           <td><a class="btn btn-danger"href="/Employee/Delete?id=@employee.Id">Delete</a></td>
+       </tr>
+       
+   }
+  </tbody>
+</table>
